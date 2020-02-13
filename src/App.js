@@ -1,14 +1,17 @@
 import React from 'react'
 import { HashRouter as Router } from 'react-router-dom'
-import Intro from './pages/Intro'
-import Why from './pages/Why'
+
+import { Title } from './scenes/Title'
 import { Global } from './styles'
+import { ErrorBoundary } from './ErrorBoundary'
 
 export default function App() {
   return (
     <Router>
-      <Global />
-      <Intro />
+      <ErrorBoundary>
+        <Global />
+        <Title />
+      </ErrorBoundary>
     </Router>
   )
 }
